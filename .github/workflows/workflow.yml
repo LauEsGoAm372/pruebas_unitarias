@@ -28,9 +28,10 @@ jobs:
         with:
             python-version: 'pypy3.9'
 
-      # Runs a single command using the runners shell
-      - name: Run a one-line script
-        run: echo Hello, world!
+      - name: Create virtualenv and activate virtualenv
+        run: 
+            virtualenv env
+            source env/bin/activate
 
       # Runs a set of commands using the runners shell
       - name: Run a multi-line script
