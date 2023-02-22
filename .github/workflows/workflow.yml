@@ -35,5 +35,6 @@ jobs:
               ws-secret-acces-key: ${{ secrets.WS_SECRET_ACCES_KEY}}
               ws-session-token: ${{secrets.WS_SESSION_TOKEN}}
               ws-region: us-east-1
+              
       -name: test aws cli
        run: aws s3api list-buckets
