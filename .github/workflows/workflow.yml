@@ -28,9 +28,12 @@ jobs:
         with:
             python-version: 'pypy3.9'
 
-      - name: install requirements and run tests 
-        run: |
-          pip install virtualenv
-          virtualenv env
-          source env/bin/activate
-          pip install -r requirements.txt
+      - name: Configure aws credentials
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+              ws-acces-key-id: $ {{secrets.WS_ACCES_KEY_ID}}
+              ws-secret-acces-key: ${{ secrets.WS_SECRET_ACCES_KEY}}
+              ws-session-token: ${{secrets.WS_SESSION_TOKEN}}
+              ws-region: us-east-1
+      -name: test aws cli
+       run: aws s3api list-buckets
