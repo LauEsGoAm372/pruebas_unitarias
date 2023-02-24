@@ -31,9 +31,9 @@ jobs:
       - name: Configure aws credentials
         uses: aws-actions/configure-aws-credentials@v1
         with:
-            ws-acces-key-id: $ {{secrets.WS_ACCES_KEY_ID}}
-            ws-secret-acces-key: ${{ secrets.WS_SECRET_ACCES_KEY}}
-            ws-session-token: ${{secrets.WS_SESSION_TOKEN}}
+            aws-acces-key-id: $ {{secrets.AWS_ACCES_KEY_ID}}
+            aws-secret-acces-key: ${{ secrets.AWS_SECRET_ACCES_KEY}}
+            aws-session-token: ${{secrets.AWS_SESSION_TOKEN}}
             ws-region: us-east-1
               
       - name: test aws cli
