@@ -46,4 +46,6 @@ jobs:
             aws-region: us-east-1
               
       - name: test aws cli
-        run: aws s3api list-buckets
+        run:|
+         aws s3api list-buckets
+         aws cp funcioncitas.py s3://buckettdd
